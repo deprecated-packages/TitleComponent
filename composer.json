@@ -1,0 +1,16 @@
+{
+	"name": "zenify/title-component",
+	"description": "Title component for Nette Framework.",
+	"keywords": ["component", "title", "Zenify", "Nette"],
+	"license": ["MIT"],
+	"authors": [
+		{
+			"name": "Tomáš Votruba",
+			"homepage": "http://tomasvotruba.cz"
+		}
+	],
+	"require": {
+		"php": ">=5.4",
+		"nette/nette": "@dev"
+	}
+}
