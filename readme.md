@@ -30,7 +30,7 @@ extensions:
 
 ## Use
 
-Inject to presenter.
+Inject to presenter
 
 ```php
 class Presenter ... {
@@ -49,7 +49,7 @@ class Presenter ... {
 
 ### Add title
 
-1. Via annotation
+Via annotation
 
 ```php
 class HomepagePresenter ... {
@@ -64,7 +64,7 @@ class HomepagePresenter ... {
 }
 ```
 
-2. Or with direct access
+Or with direct access
 
 ```php
 class ProductPresenter ... {
