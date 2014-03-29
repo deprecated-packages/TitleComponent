@@ -47,6 +47,15 @@ class Presenter ... {
 }
 ```
 
+Render in template.
+
+```smarty
+<head>
+	...
+	{control titleControl}
+</head>
+```
+
 ### Add title
 
 Via annotation
