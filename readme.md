@@ -47,7 +47,7 @@ class Presenter ... {
 }
 ```
 
-Render in template.
+Render in template
 
 ```smarty
 <head>
