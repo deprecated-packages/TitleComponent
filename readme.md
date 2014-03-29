@@ -3,7 +3,7 @@
 
 ## Requirements
 
-Zenify/User requires PHP 5.4.
+This package requires PHP 5.4.
 
 - [nette/nette](https://github.com/nette/nette/)
 
