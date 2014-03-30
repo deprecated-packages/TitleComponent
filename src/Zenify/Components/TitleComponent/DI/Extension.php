@@ -20,8 +20,8 @@ class Extension extends CompilerExtension
 	public function loadConfiguration()
 	{
 		$builder = $this->getContainerBuilder();
-		$builder->addDefinitions($this->prefix('control'))
-			->setInterface('Zenify\Components\TitleComponent\UI\IControl');
+		$builder->addDefinition($this->prefix('control'))
+			->setImplement('Zenify\Components\TitleComponent\UI\IControl');
 	}
 
 }

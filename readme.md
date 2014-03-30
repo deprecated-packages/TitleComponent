@@ -10,12 +10,10 @@ This package requires PHP 5.4.
 
 ## Installation
 
-The best way to install this package is using [Composer](http://getcomposer.org/).
-
-Add by command:
+The best way to install this package is using [Composer](http://getcomposer.org/):
 
 ```sh
-composer require "zenify/title-component:@dev"
+$ composer require "zenify/title-component:@dev"
 ```
 
 And register the extension in `config.neon`:
