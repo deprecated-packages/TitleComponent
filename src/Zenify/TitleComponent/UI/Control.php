@@ -5,7 +5,7 @@
  * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
  */
 
-namespace Zenify\Components\TitleComponent\UI;
+namespace Zenify\TitleComponent\UI;
 
 use Nette;
 
