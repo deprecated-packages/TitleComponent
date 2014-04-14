@@ -16,12 +16,13 @@ The best way to install this package is using [Composer](http://getcomposer.org/
 $ composer require "zenify/title-component:@dev"
 ```
 
-And register the extension in `config.neon`:
+And register the factory in `config.neon`:
 
 ```neon
-extensions:
-	- Zenify\Components\TitleComponent\DI\Extension
+services:
+	- Zenify\TitleComponent\UI\IControl
 ```
+
 
 ## Use
 
@@ -30,7 +31,7 @@ Inject to presenter
 ```php
 class Presenter ... {
 
-	/** @inject @var Zenify\Components\TitleComponent\UI\IControl */
+	/** @inject @var Zenify\TitleComponent\UI\IControl */
 	public $titleControl;
 
 
