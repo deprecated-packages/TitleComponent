@@ -20,7 +20,7 @@ And register the factory in `config.neon`:
 
 ```neon
 services:
-	- Zenify\TitleComponent\UI\IControl
+	- Zenify\TitleComponent\IControl
 ```
 
 
@@ -31,7 +31,7 @@ Inject to presenter
 ```php
 class Presenter ... {
 
-	/** @inject @var Zenify\TitleComponent\UI\IControl */
+	/** @inject @var Zenify\TitleComponent\IControl */
 	public $titleControl;
 
 

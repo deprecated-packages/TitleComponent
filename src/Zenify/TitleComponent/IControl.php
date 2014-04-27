@@ -5,7 +5,7 @@
  * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
  */
 
-namespace Zenify\TitleComponent\UI;
+namespace Zenify\TitleComponent;
 
 
 interface IControl

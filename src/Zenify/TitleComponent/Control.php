@@ -5,7 +5,7 @@
  * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
  */
 
-namespace Zenify\TitleComponent\UI;
+namespace Zenify\TitleComponent;
 
 use Nette;
 
@@ -19,7 +19,7 @@ class Control extends Nette\Application\UI\Control
 	private $translator;
 
 
-	public function inject(Nette\Localization\ITranslator $translator = NULL)
+	public function __construct(Nette\Localization\ITranslator $translator = NULL)
 	{
 		$this->translator = $translator;
 	}
