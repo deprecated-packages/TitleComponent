@@ -5,7 +5,7 @@
 
 This package requires PHP 5.4.
 
-- [nette/nette](https://github.com/nette/nette/)
+- [nette/application](https://github.com/nette/application/)
 
 
 ## Installation
@@ -13,7 +13,7 @@ This package requires PHP 5.4.
 The best way to install this package is using [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require "zenify/title-component:@dev"
+$ composer require zenify/title-component:@dev
 ```
 
 And register the factory in `config.neon`:
@@ -35,7 +35,7 @@ class Presenter ... {
 	public $titleControl;
 
 
-	public function createComponentTitleControl()
+	public function createComponentTitle()
 	{
 		return $this->titleControl->create();
 	}
@@ -48,7 +48,7 @@ Render in template
 ```smarty
 <head>
 	...
-	{control titleControl}
+	{control title}
 </head>
 ```
 
@@ -77,7 +77,7 @@ class ProductPresenter ... {
 	public function renderDetail($id)
 	{
 		$product = ...($id);
-		$this['titleControl']->setTitle('Detail of ' . $product->name);
+		$this['title']->setTitle('Detail of ' . $product->name);
 	}
 
 }
