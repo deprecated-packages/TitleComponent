@@ -9,9 +9,7 @@
 		}
 	],
 	"require": {
-		"php": ">=5.4",
-		"nette/nette": "@dev",
-		"zenify/icon-submit-button": "@dev"
+		"nette/application": "@dev"
 	},
 	"autoload": {
 		"psr-0": {
