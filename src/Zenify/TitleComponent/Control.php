@@ -22,7 +22,7 @@ class Control extends Nette\Application\UI\Control
 	private $brand;
 
 	/** @var string */
-	private $delimeter = "-";
+	private $delimeter = '-';
 
 
 	public function __construct(Nette\Localization\ITranslator $translator = NULL)
