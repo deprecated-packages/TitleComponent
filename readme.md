@@ -90,7 +90,7 @@ class ProductPresenter ... {
 class HomepagePresenter ... {
 
 	/**
-	 * @title homepage.cotact.title
+	 * @title homepage.contact.title
 	 */
 	public function renderContact()
 	{
