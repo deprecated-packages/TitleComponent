@@ -18,6 +18,12 @@ class Control extends Nette\Application\UI\Control
 	/** @var Nette\Localization\ITranslator */
 	private $translator;
 
+	/** @var string */
+	private $brand;
+
+	/** @var string */
+	private $delimeter = "-";
+
 
 	public function __construct(Nette\Localization\ITranslator $translator = NULL)
 	{
@@ -50,6 +56,8 @@ class Control extends Nette\Application\UI\Control
 		}
 
 		$this->template->title = $this->title;
+		$this->template->brand = $this->brand;
+		$this->template->delimeter = $this->delimeter;
 		$this->template->setFile(__DIR__ . '/templates/default.latte');
 		$this->template->render();
 	}
@@ -58,6 +66,18 @@ class Control extends Nette\Application\UI\Control
 	public function setTitle($title)
 	{
 		$this->title = $title;
+	}
+
+
+	public function setBrand($brand)
+	{
+		$this->brand = $brand;
+	}
+
+
+	public function setDelimeter($delimeter)
+	{
+		$this->delimeter = $delimeter;
 	}
 
 }
