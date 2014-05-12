@@ -98,3 +98,20 @@ class HomepagePresenter ... {
 
 }
 ```
+
+#### Add website brand
+
+Also you can setup showing website brand after the title.
+
+```php
+class Presenter ... {
+
+	public function createComponentTitle()
+	{
+		$control = $this->titleControl->create();
+		$control->setBrand('Nette framework');
+		return $control;
+	}
+
+}
+```
