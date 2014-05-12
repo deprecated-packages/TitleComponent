@@ -108,9 +108,9 @@ class Presenter ... {
 
 	public function createComponentTitle()
 	{
-		$title = $this->titleControl->create();
-		$title->setBrand('Nette framework');
-		return $title;
+		$control = $this->titleControl->create();
+		$control->setBrand('Nette framework');
+		return $control;
 	}
 
 }
