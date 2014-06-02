@@ -8,7 +8,7 @@ See section `require` in [composer.json](composer.json).
 
 ## Installation
 
-The best way to +install this package is using [Composer](http://getcomposer.org/):
+The best way to install this package is using [Composer](http://getcomposer.org/):
 
 ```sh
 $ composer require zenify/title-component:@dev
