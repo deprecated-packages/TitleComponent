@@ -97,6 +97,15 @@ class HomepagePresenter ... {
 }
 ```
 
+Even complex translations
+
+```php
+public function renderDetail($name)
+{
+	$this['title']->setTitle(['user.detail.name', NULL, ['name' => $name]]);
+}
+```
+
 #### Add website brand
 
 Also you can setup showing website brand after the title.
