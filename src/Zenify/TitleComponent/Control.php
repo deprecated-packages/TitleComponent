@@ -8,11 +8,12 @@
 namespace Zenify\TitleComponent;
 
 use Nette;
+use Nette\Application\UI\Presenter;
 
 
 class Control extends Nette\Application\UI\Control
 {
-	/** @var string */
+	/** @var string|array */
 	private $title;
 
 	/** @var Nette\Localization\ITranslator */
@@ -35,8 +36,8 @@ class Control extends Nette\Application\UI\Control
 	{
 		parent::attached($presenter);
 
-		$methods[] = $presenter->formatActionMethod($presenter->view);
-		$methods[] = $presenter->formatRenderMethod($presenter->view);
+		$methods[] = $presenter->formatActionMethod($presenter->action);
+		$methods[] = $presenter->formatRenderMethod($presenter->action);
 		foreach ($methods as $method) {
 			if ($presenter->reflection->hasMethod($method)) {
 				$reflectionMethod = $presenter->reflection->getMethod($method);
@@ -52,7 +53,12 @@ class Control extends Nette\Application\UI\Control
 	public function render()
 	{
 		if ($this->translator) {
-			$this->title = $this->translator->translate($this->title);
+			if (is_array($this->title)) {
+				$this->title = call_user_func_array($this->translator->translate, $this->title);
+
+			} else {
+				$this->title = $this->translator->translate($this->title);
+			}
 		}
 
 		$this->template->title = $this->title;
