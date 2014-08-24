@@ -27,7 +27,6 @@ Inject to presenter
 ```php
 class Presenter ...
 {
-
 	/**
 	 * @inject
 	 * @var Zenify\TitleComponent\IControlFactory
