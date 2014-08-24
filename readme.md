@@ -1,5 +1,8 @@
 # Zenify/TitleComponent
 
+[![Build Status](https://travis-ci.org/Zenify/TitleComponent.svg?branch=master)](https://travis-ci.org/Zenify/TitleComponent)
+[![Downloads this Month](https://img.shields.io/packagist/dm/zenify/title-component.svg)](https://packagist.org/packages/zenify/title-component)
+
 
 ## Installation
 
