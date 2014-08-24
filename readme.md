@@ -81,22 +81,43 @@ class HomepagePresenter ... {
 Or with direct access
 
 ```php
-class ProductPresenter ... {
+class ProductPresenter ...
+{
 
+	public function startup()
+   	{
+   	    // set main title for whole app
+   		$this['title']->set('Zenify');
+		parent::startup();
+   	}
+
+
+	/**
+	 * @param int
+	 */
 	public function renderDetail($id)
 	{
 		$product = ...($id);
-		$this['title']->setTitle('Detail of ' . $product->name);
+		$this['title']->append('Detail of ' . $product->name);
+
+		// change separator if you like
+		$this['title']->setSeparator(' - ');
 	}
 
 }
 ```
 
+This will result in:
+
+```
+Zenify - Detail of product ...
+```
+
 #### Translator supported
 
-
 ```php
-class HomepagePresenter ... {
+class HomepagePresenter ...
+{
 
 	/**
 	 * @title homepage.contact.title
@@ -105,14 +126,14 @@ class HomepagePresenter ... {
 	{
 	}
 
-}
-```
 
-Even complex translations
+	/**
+	 * @param string
+	 */
+	public function renderDetail($name)
+	{
+		$this['title']->set(['user.detail.name', NULL, ['name' => $name]]);
+	}
 
-```php
-public function renderDetail($name)
-{
-	$this['title']->setTitle(['user.detail.name', NULL, ['name' => $name]]);
 }
 ```
