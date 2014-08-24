@@ -11,19 +11,19 @@ use Nette;
 use Nette\Application\UI\Presenter;
 
 
+/**
+ * @method Control  setSeparator()
+ */
 class Control extends Nette\Application\UI\Control
 {
-	/** @var string|array */
-	private $title;
+	/** @var array[]|string[] */
+	private $items = [];
+
+	/** @var string */
+	private $separator = ' | ';
 
 	/** @var Nette\Localization\ITranslator */
 	private $translator;
-
-	/** @var string */
-	private $brand;
-
-	/** @var string */
-	private $delimeter = '-';
 
 
 	public function __construct(Nette\Localization\ITranslator $translator = NULL)
@@ -32,58 +32,88 @@ class Control extends Nette\Application\UI\Control
 	}
 
 
+	/**
+	 * @param string
+	 */
+	public function prepend($title)
+	{
+		array_unshift($this->items, $title);
+	}
+
+	/**
+	 * @param string
+	 */
+	public function append($title)
+	{
+		array_push($this->items, $title);
+	}
+
+
+	/**
+	 * @param string|array
+	 */
+	public function set($title)
+	{
+		$this->items = [];
+		$this->append($title);
+	}
+
+
 	public function attached($presenter)
 	{
 		parent::attached($presenter);
 
-		$methods[] = $presenter->formatActionMethod($presenter->action);
-		$methods[] = $presenter->formatRenderMethod($presenter->action);
-		foreach ($methods as $method) {
-			if ($presenter->reflection->hasMethod($method)) {
-				$reflectionMethod = $presenter->reflection->getMethod($method);
-
-				if ($title = $reflectionMethod->getAnnotation('title')) {
-					$this->title = $title;
-				}
-			}
+		$parser = new AnnotationParser;
+		if ($title = $parser->detectAndExtract($presenter)) {
+			$this->set($title);
 		}
 	}
 
 
-	public function render()
+	/**
+	 * @param string|NULL $mainTitle
+	 */
+	public function render($mainTitle = NULL)
 	{
-		if ($this->translator) {
-			if (is_array($this->title)) {
-				$this->title = call_user_func_array($this->translator->translate, $this->title);
-
-			} else {
-				$this->title = $this->translator->translate($this->title);
-			}
+		if ($mainTitle) {
+			$this->prepend($mainTitle);
 		}
 
-		$this->template->title = $this->title;
-		$this->template->brand = $this->brand;
-		$this->template->delimeter = $this->delimeter;
+		$this->template->title = $this->getTitle();
 		$this->template->setFile(__DIR__ . '/templates/default.latte');
 		$this->template->render();
 	}
 
 
-	public function setTitle($title)
+	/**
+	 * @return string
+	 */
+	private function getTitle()
 	{
-		$this->title = $title;
+		$this->items = array_filter($this->items);
+		if ($this->translator) {
+			$this->items = array_map(function ($item) {
+				return $this->translate($item);
+			}, $this->items);
+		}
+		return implode($this->separator, $this->items);
 	}
 
 
-	public function setBrand($brand)
+	/**
+	 * @param string $title
+	 * @return mixed|string
+	 */
+	private function translate($title)
 	{
-		$this->brand = $brand;
-	}
+		if (is_array($title)) {
+			$title = call_user_func_array([$this->translator, 'translate'], $title);
 
+		} else {
+			$title = $this->translator->translate($title);
+		}
 
-	public function setDelimeter($delimeter)
-	{
-		$this->delimeter = $delimeter;
+		return $title;
 	}
 
 }
