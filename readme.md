@@ -81,7 +81,7 @@ class HomepagePresenter ...
 }
 ```
 
-Or with direct access
+Or via method
 
 ```php
 class ProductPresenter ...
