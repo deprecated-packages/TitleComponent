@@ -1,11 +1,6 @@
 # Zenify/TitleComponent
 
 
-## Requirements
-
-See section `require` in [composer.json](composer.json).
-
-
 ## Installation
 
 The best way to install this package is using [Composer](http://getcomposer.org/):
@@ -27,7 +22,8 @@ services:
 Inject to presenter
 
 ```php
-class Presenter ... {
+class Presenter ...
+{
 
 	/**
 	 * @inject
@@ -44,6 +40,15 @@ class Presenter ... {
 		return $this->titleControlFactory->create();
 	}
 
+}
+```
+
+or just use the trait:
+
+```php
+class Presenter ...
+{
+	use Zenify\TitleComponent\Application\TInjectComponent;
 }
 ```
 
