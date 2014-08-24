@@ -20,7 +20,7 @@ trait TInjectComponent
 	/**
 	 * @return \Zenify\TitleComponent\Control
 	 */
-	public function createComponentTitle()
+	protected function createComponentTitle()
 	{
 		return $this->titleControl->create();
 	}

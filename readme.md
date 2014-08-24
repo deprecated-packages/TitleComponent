@@ -37,7 +37,7 @@ class Presenter ...
 	/**
 	 * @return Zenify\TitleComponent\Control
 	 */
-	public function createComponentTitle()
+	protected function createComponentTitle()
 	{
 		return $this->titleControlFactory->create();
 	}
