@@ -66,7 +66,8 @@ Render in template
 Via annotation
 
 ```php
-class HomepagePresenter ... {
+class HomepagePresenter ...
+{
 
 	/**
 	 * @title Contact us
