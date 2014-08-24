@@ -40,6 +40,7 @@ class Control extends Nette\Application\UI\Control
 		array_unshift($this->items, $title);
 	}
 
+
 	/**
 	 * @param string
 	 */
