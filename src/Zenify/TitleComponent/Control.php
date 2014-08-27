@@ -16,8 +16,8 @@ use Nette\Application\UI\Presenter;
  */
 class Control extends Nette\Application\UI\Control
 {
-	/** @var array[]|string[] */
-	private $items = [];
+	/** @var array */
+	private $items = array();
 
 	/** @var string */
 	private $separator = ' | ';
@@ -55,7 +55,7 @@ class Control extends Nette\Application\UI\Control
 	 */
 	public function set($title)
 	{
-		$this->items = [];
+		$this->items = array();
 		$this->append($title);
 	}
 
@@ -93,9 +93,7 @@ class Control extends Nette\Application\UI\Control
 	{
 		$this->items = array_filter($this->items);
 		if ($this->translator) {
-			$this->items = array_map(function ($item) {
-				return $this->translate($item);
-			}, $this->items);
+			$this->items = array_map(array($this, 'translate'), $this->items);
 		}
 		return implode($this->separator, $this->items);
 	}
@@ -108,7 +106,7 @@ class Control extends Nette\Application\UI\Control
 	private function translate($title)
 	{
 		if (is_array($title)) {
-			$title = call_user_func_array([$this->translator, 'translate'], $title);
+			$title = call_user_func_array(array($this->translator, 'translate'), $title);
 
 		} else {
 			$title = $this->translator->translate($title);

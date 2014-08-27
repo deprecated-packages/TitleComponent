@@ -41,7 +41,7 @@ class AnnotationTranslationTest extends \BaseTestCase
 
 	public function testArrayTranslation()
 	{
-		$this->callPresenterAction('Localized', 'user', ['name' => 'Matyas']);
+		$this->callPresenterAction('Localized', 'user', array('name' => 'Matyas'));
 
 		Assert::same(
 			'<title>This is profile of Matyas</title>',

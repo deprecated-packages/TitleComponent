@@ -29,7 +29,9 @@ class LocalizedPresenter extends Nette\Application\UI\Presenter
 	 */
 	public function renderUser($name)
 	{
-		$this['title']->set(['user.detail.name', NULL, ['name' => $name]]);
+		$this['title']->set(array('user.detail.name', NULL, array(
+			'name' => $name
+		)));
 	}
 
 

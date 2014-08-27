@@ -35,7 +35,7 @@ class MethodsTest extends \BaseTestCase
 		$control->set(NULL);
 
 		Assert::same(
-			$this->getComponentRender($control, ['mainTitle' => 'Main title']),
+			$this->getComponentRender($control, array('mainTitle' => 'Main title')),
 			'<title>Main title</title>'
 		);
 	}
@@ -135,7 +135,7 @@ class MethodsTest extends \BaseTestCase
 		);
 
 		Assert::same(
-			$this->getComponentRender($control, ['mainTitle' => 'another title']),
+			$this->getComponentRender($control, array('mainTitle' => 'another title')),
 			'<title>another title | prefix | New main title</title>'
 		);
 	}

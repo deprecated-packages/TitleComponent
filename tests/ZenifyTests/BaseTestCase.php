@@ -25,7 +25,7 @@ class BaseTestCase extends TestCase
 	 * @param array $args
 	 * @return IResponse
 	 */
-	protected function callPresenterAction($presenter, $action, $args = [])
+	protected function callPresenterAction($presenter, $action, $args = array())
 	{
 		$args['action'] = $action;
 		$request = new Nette\Application\Request($presenter, 'GET', $args);
@@ -38,7 +38,7 @@ class BaseTestCase extends TestCase
 	 * @param array
 	 * @return string
 	 */
-	protected function getPresenterComponentRender($name, array $args = [])
+	protected function getPresenterComponentRender($name, array $args = array())
 	{
 		return $this->getComponentRender($this->presenter[$name], $args);
 	}
@@ -49,11 +49,11 @@ class BaseTestCase extends TestCase
 	 * @param $control
 	 * @return string
 	 */
-	protected function getComponentRender($control, array $args = [])
+	protected function getComponentRender($control, array $args = array())
 	{
 		$args = array_slice(func_get_args(), 1);
 		ob_start();
-		call_user_func_array([$control, 'render'], $args);
+		call_user_func_array(array($control, 'render'), $args);
 		$render = ob_get_clean();
 
 		return trim($render);
