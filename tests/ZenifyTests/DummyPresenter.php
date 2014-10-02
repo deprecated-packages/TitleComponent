@@ -10,7 +10,7 @@ class DummyPresenter extends Nette\Application\UI\Presenter
 
 	/**
 	 * @inject
-	 * @var \Zenify\TitleComponent\IControlFactory
+	 * @var \Zenify\TitleComponent\ControlFactory
 	 */
 	public $titleControlFactory;
 

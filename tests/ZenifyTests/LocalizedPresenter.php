@@ -10,7 +10,7 @@ class LocalizedPresenter extends Nette\Application\UI\Presenter
 
 	/**
 	 * @inject
-	 * @var \Zenify\TitleComponent\IControlFactory
+	 * @var \Zenify\TitleComponent\ControlFactory
 	 */
 	public $titleControlFactory;
 
@@ -45,7 +45,7 @@ class LocalizedPresenter extends Nette\Application\UI\Presenter
 
 
 	/**
-	 * So we don't need templates for presenter
+	 * We don't need templates for presenter
 	 * @throws Nette\Application\AbortException
 	 */
 	public function sendTemplate()

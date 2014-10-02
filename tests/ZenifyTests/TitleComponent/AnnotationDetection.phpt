@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Test: Zenify\TitleComponent\Control.
- *
  * @testCase
- * @package Zenify\TitleComponent
  */
 
 namespace ZenifyTests\TitleComponent;
@@ -12,13 +9,14 @@ namespace ZenifyTests\TitleComponent;
 use Nette;
 use Tester\Assert;
 use Zenify;
+use ZenifyTests\BaseTestCase;
 use ZenifyTests\DummyPresenter;
 
 
 $container = require_once __DIR__ . '/../bootstrap.php';
 
 
-class AnnotationDetectionTest extends \BaseTestCase
+class AnnotationDetectionTest extends BaseTestCase
 {
 
 	public function setUp()

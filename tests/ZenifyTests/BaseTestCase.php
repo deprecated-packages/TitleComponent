@@ -1,14 +1,23 @@
 <?php
+
+namespace ZenifyTests;
+
+use Nette;
 use Nette\Application\IResponse;
 use Tester\TestCase;
 
 
 class BaseTestCase extends TestCase
 {
-	/** @var Nette\DI\Container */
+
+	/**
+	 * @var Nette\DI\Container
+	 */
 	protected $container;
 
-	/** @var Nette\Application\UI\Presenter */
+	/**
+	 * @var Nette\Application\UI\Presenter
+	 */
 	protected $presenter;
 
 
