@@ -17,7 +17,7 @@ And register the factory in `config.neon`:
 
 ```neon
 services:
-	- Zenify\TitleComponent\IControlFactory
+	- Zenify\TitleComponent\ControlFactory
 ```
 
 
@@ -28,9 +28,10 @@ Inject to presenter
 ```php
 class Presenter ...
 {
+
 	/**
 	 * @inject
-	 * @var Zenify\TitleComponent\IControlFactory
+	 * @var Zenify\TitleComponent\ControlFactory
 	 */
 	public $titleControlFactory;
 
@@ -51,7 +52,9 @@ or just use the trait:
 ```php
 class Presenter ...
 {
-	use Zenify\TitleComponent\Application\TInjectComponent;
+
+	use Zenify\TitleComponent\Application\TitleComponent;
+
 }
 ```
 
