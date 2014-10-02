@@ -8,21 +8,28 @@
 namespace Zenify\TitleComponent;
 
 use Nette;
-use Nette\Application\UI\Presenter;
 
 
 /**
+ * @property-read \Nette\Bridges\ApplicationLatte\Template|\stdClass $template
  * @method Control  setSeparator()
  */
 class Control extends Nette\Application\UI\Control
 {
-	/** @var array */
+
+	/**
+	 * @var array
+	 */
 	private $items = array();
 
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	private $separator = ' | ';
 
-	/** @var Nette\Localization\ITranslator */
+	/**
+	 * @var Nette\Localization\ITranslator
+	 */
 	private $translator;
 
 
