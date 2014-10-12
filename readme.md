@@ -47,17 +47,6 @@ class Presenter ...
 }
 ```
 
-or just use the trait:
-
-```php
-class Presenter ...
-{
-
-	use Zenify\TitleComponent\Application\TitleComponent;
-
-}
-```
-
 Render in template
 
 ```smarty
