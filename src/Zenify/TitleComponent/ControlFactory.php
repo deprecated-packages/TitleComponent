@@ -14,6 +14,6 @@ interface ControlFactory
 	/**
 	 * @return Control
 	 */
-	public function create();
+	function create();
 
 }
