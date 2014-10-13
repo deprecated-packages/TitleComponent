@@ -17,7 +17,7 @@ before_script:
   - vendor/bin/parallel-lint -e php,phpt --exclude vendor .
 
 script:
-  - vendor/bin/tester -p $PHP_BIN -c tests/php.ini-unix tests -s
+  - vendor/bin/tester -c tests/php.ini-unix tests -s
   - vendor/bin/phpcs src --standard=vendor/zenify/coding-standard/src/ZenifyCodingStandard/ruleset.xml
   - vendor/bin/phpcs tests/ZenifyTests/TitleComponent --standard=vendor/zenify/coding-standard/src/ZenifyCodingStandard/ruleset.xml
 
