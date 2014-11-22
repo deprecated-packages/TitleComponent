@@ -3,12 +3,10 @@
 	"description": "Title component for Nette Framework",
 	"license": "MIT",
 	"authors": [
-		{
-			"name": "Tomáš Votruba",
-			"homepage": "http://tomasvotruba.cz"
-		}
+		{ "name": "Tomáš Votruba", "homepage": "http://tomasvotruba.cz" }
 	],
 	"require": {
+		"php": ">=5.4",
 		"nette/application": "~2.0"
 	},
 	"require-dev": {
@@ -18,15 +16,15 @@
 		"nette/mail": "~2.0",
 		"nette/robot-loader": "~2.0",
 		"nette/safe-stream": "~2.0",
-		"nette/tester": "@dev",
+		"nette/tester": "~1.3",
 		"nette/utils": "~2.0",
 		"tracy/tracy": "~2.0",
 		"zenify/coding-standard": "~1.0",
 		"jakub-onderka/php-parallel-lint": "~0.8"
 	},
 	"autoload": {
-		"psr-0": {
-			"Zenify\\": "src/"
+		"psr-4": {
+			"Zenify\\TitleComponent\\": "src/"
 		}
 	}
 }
