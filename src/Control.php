@@ -8,19 +8,20 @@
 namespace Zenify\TitleComponent;
 
 use Nette;
+use Nette\Bridges\ApplicationLatte\Template;
 
 
 /**
- * @property-read \Nette\Bridges\ApplicationLatte\Template|\stdClass $template
- * @method Control  setSeparator()
+ * @property-read Template|\stdClass $template
+ * @method Control setSeparator()
  */
 class Control extends Nette\Application\UI\Control
 {
 
 	/**
-	 * @var array
+	 * @var string[]
 	 */
-	private $items = array();
+	private $items = [];
 
 	/**
 	 * @var string
@@ -62,7 +63,7 @@ class Control extends Nette\Application\UI\Control
 	 */
 	public function set($title)
 	{
-		$this->items = array();
+		$this->items = [];
 		$this->append($title);
 	}
 
@@ -100,7 +101,7 @@ class Control extends Nette\Application\UI\Control
 	{
 		$this->items = array_filter($this->items);
 		if ($this->translator) {
-			$this->items = array_map(array($this, 'translate'), $this->items);
+			$this->items = array_map([$this, 'translate'], $this->items);
 		}
 		return implode($this->separator, $this->items);
 	}
@@ -113,7 +114,7 @@ class Control extends Nette\Application\UI\Control
 	private function translate($title)
 	{
 		if (is_array($title)) {
-			$title = call_user_func_array(array($this->translator, 'translate'), $title);
+			$title = call_user_func_array([$this->translator, 'translate'], $title);
 
 		} else {
 			$title = $this->translator->translate($title);

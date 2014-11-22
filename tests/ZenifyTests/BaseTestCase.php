@@ -34,7 +34,7 @@ class BaseTestCase extends TestCase
 	 * @param array $args
 	 * @return IResponse
 	 */
-	protected function callPresenterAction($presenter, $action, $args = array())
+	protected function callPresenterAction($presenter, $action, $args = [])
 	{
 		$args['action'] = $action;
 		$request = new Nette\Application\Request($presenter, 'GET', $args);

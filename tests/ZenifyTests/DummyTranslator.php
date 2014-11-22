@@ -8,10 +8,10 @@ use Nette\Localization\ITranslator;
 class DummyTranslator implements ITranslator
 {
 	/** @var array */
-	private $translations = array(
+	private $translations = [
 		'homepage.title.english' => 'Welcome home',
 		'user.detail.name' => 'This is profile of %name%',
-	);
+	];
 
 
 	/**
@@ -22,7 +22,7 @@ class DummyTranslator implements ITranslator
 	 * @param  int
 	 * @return string
 	 */
-	public function translate($message, $count = NULL, array $parameters = array())
+	public function translate($message, $count = NULL, array $parameters = [])
 	{
 		if ( ! isset($this->translations[$message])) {
 			return $message;
@@ -31,7 +31,7 @@ class DummyTranslator implements ITranslator
 		$message = $this->translations[$message];
 
 		if ($parameters) {
-			$tmp = array();
+			$tmp = [];
 			foreach ($parameters as $key => $val) {
 				$tmp['%' . trim($key, '%') . '%'] = $val;
 			}

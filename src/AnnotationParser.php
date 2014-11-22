@@ -19,7 +19,7 @@ class AnnotationParser extends Nette\Object
 	 */
 	public function detectAndExtract(Nette\Application\UI\Presenter $presenter)
 	{
-		$methods = array();
+		$methods = [];
 		$methods[] = $presenter->formatActionMethod($presenter->action);
 		$methods[] = $presenter->formatRenderMethod($presenter->action);
 
