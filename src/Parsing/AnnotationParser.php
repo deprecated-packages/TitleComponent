@@ -5,12 +5,12 @@
  * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
  */
 
-namespace Zenify\TitleComponent;
+namespace Zenify\TitleComponent\Parsing;
 
 use Nette;
 
 
-class AnnotationParser extends Nette\Object
+class AnnotationParser
 {
 
 	/**

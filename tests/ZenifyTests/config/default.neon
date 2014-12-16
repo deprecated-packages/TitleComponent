@@ -1,3 +1,0 @@
-services:
-	- Zenify\TitleComponent\ControlFactory
-	- ZenifyTests\DummyTranslator

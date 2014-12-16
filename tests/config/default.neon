@@ -1,0 +1,2 @@
+extensions:
+	- Zenify\TitleComponent\DI\TitleExtension
