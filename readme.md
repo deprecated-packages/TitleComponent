@@ -1,8 +1,10 @@
 # Zenify/TitleComponent
 
-[![Build Status](https://travis-ci.org/Zenify/TitleComponent.svg?branch=master)](https://travis-ci.org/Zenify/TitleComponent)
-[![Downloads this Month](https://img.shields.io/packagist/dm/zenify/title-component.svg)](https://packagist.org/packages/zenify/title-component)
-[![Latest stable](https://img.shields.io/packagist/v/zenify/title-component.svg)](https://packagist.org/packages/zenify/title-component)
+[![Build Status](https://img.shields.io/travis/Zenify/TitleComponent.svg?style=flat-square)](https://travis-ci.org/Zenify/TitleComponent)
+[![Quality Score](https://img.shields.io/scrutinizer/g/Zenify/TitleComponent.svg?style=flat-square)](https://scrutinizer-ci.com/g/Zenify/TitleComponent)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/Zenify/TitleComponent.svg?style=flat-square)](https://scrutinizer-ci.com/g/Zenify/TitleComponent)
+[![Downloads this Month](https://img.shields.io/packagist/dm/zenify/title-component.svg?style=flat-square)](https://packagist.org/packages/zenify/title-component)
+[![Latest stable](https://img.shields.io/packagist/v/zenify/title-component.svg?style=flat-square)](https://packagist.org/packages/zenify/title-component)
 
 
 ## Installation
