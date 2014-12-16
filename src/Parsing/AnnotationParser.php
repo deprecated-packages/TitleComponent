@@ -7,33 +7,48 @@
 
 namespace Zenify\TitleComponent\Parsing;
 
-use Nette;
+use Nette\Reflection\ClassType;
 
 
 class AnnotationParser
 {
 
+	const TITLE = 'title';
+
+
 	/**
-	 * @param Nette\Application\UI\Presenter $presenter
+	 * @param object $class
+	 * @param string $action
 	 * @return string|NULL
 	 */
-	public function detectAndExtract(Nette\Application\UI\Presenter $presenter)
+	public function detectAndExtract($class, $action)
 	{
-		$methods = [];
-		$methods[] = $presenter->formatActionMethod($presenter->action);
-		$methods[] = $presenter->formatRenderMethod($presenter->action);
-
+		$methods = ['action' . $action, 'render' . $action];
+		$classReflection = new ClassType($class);
 		foreach ($methods as $method) {
-			if ($presenter->reflection->hasMethod($method)) {
-				$reflectionMethod = $presenter->reflection->getMethod($method);
-
-				if ($title = $reflectionMethod->getAnnotation('title')) {
-					return $title;
-				}
+			if ($title = $this->getMethodAnnotation($classReflection, $method, self::TITLE)) {
+				return $title;
 			}
 		}
-
 		return NULL;
+	}
+
+
+	/**
+	 * @param ClassType $reflection
+	 * @param string $method
+	 * @param string $annotation
+	 * @return string|bool
+	 */
+	private function getMethodAnnotation(ClassType $reflection, $method, $annotation)
+	{
+		if ($reflection->hasMethod($method)) {
+			$reflectionMethod = $reflection->getMethod($method);
+			if ($title = $reflectionMethod->getAnnotation($annotation)) {
+				return $title;
+			}
+		}
+		return FALSE;
 	}
 
 }

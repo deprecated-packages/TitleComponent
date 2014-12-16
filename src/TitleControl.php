@@ -7,15 +7,17 @@
 
 namespace Zenify\TitleComponent;
 
-use Nette;
+use Nette\Application\UI\Control;
 use Nette\Bridges\ApplicationLatte\Template;
+use Nette\Localization\ITranslator;
+use Zenify\TitleComponent\Parsing\AnnotationParser;
 
 
 /**
- * @property-read Template|\stdClass $template
- * @method Control setSeparator()
+ * @property-read Template $template
+ * @method setSeparator()
  */
-class Control extends Nette\Application\UI\Control
+class TitleControl extends Control
 {
 
 	/**
@@ -29,12 +31,12 @@ class Control extends Nette\Application\UI\Control
 	private $separator = ' | ';
 
 	/**
-	 * @var Nette\Localization\ITranslator
+	 * @var ITranslator
 	 */
 	private $translator;
 
 
-	public function __construct(Nette\Localization\ITranslator $translator = NULL)
+	public function __construct(ITranslator $translator = NULL)
 	{
 		$this->translator = $translator;
 	}
@@ -73,7 +75,7 @@ class Control extends Nette\Application\UI\Control
 		parent::attached($presenter);
 
 		$parser = new AnnotationParser;
-		if ($title = $parser->detectAndExtract($presenter)) {
+		if ($title = $parser->detectAndExtract($presenter, $presenter->action)) {
 			$this->set($title);
 		}
 	}
@@ -87,8 +89,7 @@ class Control extends Nette\Application\UI\Control
 		if ($mainTitle) {
 			$this->prepend($mainTitle);
 		}
-
-		$this->template->title = $this->getTitle();
+		$this->template->setParameters(['title' => $this->getTitle()]);
 		$this->template->setFile(__DIR__ . '/templates/default.latte');
 		$this->template->render();
 	}
@@ -119,7 +120,6 @@ class Control extends Nette\Application\UI\Control
 		} else {
 			$title = $this->translator->translate($title);
 		}
-
 		return $title;
 	}
 

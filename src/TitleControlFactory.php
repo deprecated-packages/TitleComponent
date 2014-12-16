@@ -8,11 +8,11 @@
 namespace Zenify\TitleComponent;
 
 
-interface ControlFactory
+interface TitleControlFactory
 {
 
 	/**
-	 * @return Control
+	 * @return TitleControl
 	 */
 	function create();
 
