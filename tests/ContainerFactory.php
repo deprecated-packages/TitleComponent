@@ -2,7 +2,6 @@
 
 namespace Zenify\TitleComponent\Tests;
 
-
 use Nette\Configurator;
 use Nette\DI\Container;
 
