@@ -7,17 +7,17 @@
 
 ## Installation
 
-To get the latest version run [Composer](http://getcomposer.org/) command:
+Get the latest version via composer:
 
 ```sh
 $ composer require zenify/title-component
 ```
 
-And register the factory in `config.neon`:
+Register extension in `config.neon`:
 
 ```neon
-services:
-	- Zenify\TitleComponent\ControlFactory
+extensions:
+	- Zenify\TitleComponent\DI\TitleExtension
 ```
 
 
@@ -31,13 +31,13 @@ class Presenter ...
 
 	/**
 	 * @inject
-	 * @var Zenify\TitleComponent\ControlFactory
+	 * @var Zenify\TitleComponent\TitleControlFactory
 	 */
 	public $titleControlFactory;
 
 
 	/**
-	 * @return Zenify\TitleComponent\Control
+	 * @return Zenify\TitleComponent\TitleControl
 	 */
 	protected function createComponentTitle()
 	{
