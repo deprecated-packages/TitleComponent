@@ -1,4 +1,4 @@
-# Zenify/TitleComponent
+# Title Component
 
 [![Build Status](https://img.shields.io/travis/Zenify/TitleComponent.svg?style=flat-square)](https://travis-ci.org/Zenify/TitleComponent)
 [![Quality Score](https://img.shields.io/scrutinizer/g/Zenify/TitleComponent.svg?style=flat-square)](https://scrutinizer-ci.com/g/Zenify/TitleComponent)
@@ -7,9 +7,9 @@
 [![Latest stable](https://img.shields.io/packagist/v/zenify/title-component.svg?style=flat-square)](https://packagist.org/packages/zenify/title-component)
 
 
-## Installation
+## Install
 
-Get the latest version via composer:
+Via Composer:
 
 ```sh
 $ composer require zenify/title-component
@@ -23,7 +23,7 @@ extensions:
 ```
 
 
-## Use
+## Usage
 
 Inject to presenter
 
@@ -111,7 +111,7 @@ This will result in:
 Zenify - Detail of product ...
 ```
 
-#### Translator supported
+### Translator supported
 
 ```php
 class HomepagePresenter ...
