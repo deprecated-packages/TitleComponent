@@ -15,7 +15,6 @@ use Zenify\TitleComponent\Parsing\AnnotationParser;
 
 /**
  * @property-read Template $template
- * @method setSeparator()
  */
 class TitleControl extends Control
 {
@@ -39,6 +38,15 @@ class TitleControl extends Control
 	public function __construct(ITranslator $translator = NULL)
 	{
 		$this->translator = $translator;
+	}
+
+
+	/**
+	 * @param string $separator
+	 */
+	public function setSeparator($separator)
+	{
+		$this->separator = $separator;
 	}
 
 
