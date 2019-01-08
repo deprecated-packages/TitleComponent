@@ -8,11 +8,11 @@
 	"require": {
 		"php": ">=5.5",
 		"nette/application": "~2.2",
-		"nette/robot-loader": "~2.2",
 		"tracy/tracy": "~2.2"
 	},
 	"require-dev": {
-		"nette/bootstrap": "~2.2"
+		"nette/bootstrap": "~2.2",
+		"nette/robot-loader": "~2.2"
 	},
 	"autoload": {
 		"psr-4": {
